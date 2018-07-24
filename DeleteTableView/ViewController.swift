@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textFied: UITextField!
+    
+    var name: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        if name != nil {
+            textFied.text = name
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if textFied.text != "" {
+            name = textFied.text
+        }
+    
     }
-
 
 }
 
