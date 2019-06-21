@@ -16,30 +16,23 @@ class TableViewController: UITableViewController {
     var number: [Int] = []
     var hasNoData: Bool = false {
         didSet {
-//            if number.count == 0 {
-//                tableView.tableFooterView = noDataView
-//            } else {
-//                tableView.tableFooterView = footerView
-//            }
-            
                hasNoData ? (tableView.tableFooterView = noDataView) : (tableView.tableFooterView = footerView)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = editButtonItem
+        tableView.allowsMultipleSelectionDuringEditing = true
     }
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        if number.count == 0 {
-//            hasNoData = true
-//        } else {
-//            hasNoData = false
-//        }
-        
         hasNoData = (number.count == 0)
     }
+    
+   
+    
     
     // MARK: - Table view data source
     
