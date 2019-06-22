@@ -31,7 +31,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="IAw-HN-ZL5" kind="show" id="F2i-Ne-j7T"/>
+                                    <segue destination="IAw-HN-ZL5" kind="show" id="Rg0-7K-Ecb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -42,11 +42,23 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cB5-3C-GRY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5et-AN-YPS">
-                            <connections>
-                                <segue destination="IAw-HN-ZL5" kind="show" id="3IE-J2-zbh"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="5et-AN-YPS">
+                                <connections>
+                                    <segue destination="IAw-HN-ZL5" kind="show" id="3IE-J2-zbh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="ciT-Ti-SfW">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3ua-qm-xfS">
+                                    <rect key="frame" x="239.5" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Delete"/>
+                                    <connections>
+                                        <action selector="actionDelete:" destination="0Ub-ze-2Ak" eventType="touchUpInside" id="CR1-1g-k9a"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -141,6 +153,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F2i-Ne-j7T"/>
+        <segue reference="3IE-J2-zbh"/>
     </inferredMetricsTieBreakers>
 </document>
